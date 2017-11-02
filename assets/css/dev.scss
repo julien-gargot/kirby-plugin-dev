@@ -1,0 +1,47 @@
+// D E V
+#dev
+{
+  display: none; visibility: hidden;
+  font-size: 10px; line-height: 1.5;
+  position: fixed; bottom:10px; left: 0; width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: 1000;
+  pointer-events: none;
+  @include media-breakpoint-down(xs) { #size:after  { content:"phone (-xs)"; }}
+  @include media-breakpoint-up(sm)   { #size:after  { content:"phone (-sm)"; }}
+  @include media-breakpoint-up(md)   { #size:after  { content:"tablet (-md)"; }}
+  @include media-breakpoint-up(lg)   { #size:after  { content:"desktop (-lg)"; }}
+  @include media-breakpoint-up(xl)   { #size:after  { content:"wide desktop (-xl)"; }}
+  @media (orientation: landscape)    { #size:before { content:"Landscape / "; }}
+  @media (orientation: portrait)     { #size:before { content:"Portrait / ";  }}
+  .row {
+    text-align: center; margin-bottom:0 !important;
+    > div {
+      background-color: rgba(0, 255, 255, 0.3); box-shadow: 0 0 0 1px #0FF;
+      > * {
+        background-color: rgba(255, 255, 255, 0.7); overflow: hidden; height: 13px; }}}
+
+  &.big {
+    bottom:1px;
+    #grid > div > * {
+      height: calc(100vh - #{ 2 * 13px + 2px} ); }}
+
+  .dev & { display: block; visibility: visible; }
+}
+
+.dev {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAgCAYAAADkK90uAAAAKklEQVRoge3DMQ0AAAgDsPk3MamggY+jTZoAAAAAAAAAAAAAAADctB3/XPlpHgBMtcQsAAAAAElFTkSuQmCC') top left repeat;
+    opacity: .4;
+    z-index: 10000;
+    pointer-events: none;
+  }
+}
