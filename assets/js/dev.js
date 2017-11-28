@@ -16,6 +16,7 @@ document.onkeypress = function (oPEvt) {
       case ';':
         oEvent.preventDefault();
         document.getElementsByTagName('html').item(0).classList.toggle("dev");
+        document.getElementsByTagName('html').item(0).classList.toggle("dev--16");
         break;
       case ' ':
         oEvent.preventDefault();
