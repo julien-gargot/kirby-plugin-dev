@@ -1,6 +1,11 @@
 <?php
+# site/plugins/dev/index.php
 
-$kirby->set('snippet', 'dev', __DIR__ . '/snippets/dev.php');
+Kirby::plugin('julien-gargot/dev', [
+  'snippets' => [
+    'dev' => __DIR__ . '/snippets/dev.php'
+  ]
+]);
 
 // Gulp task.
 /* // If you need to recomplice the CSS from Sass.

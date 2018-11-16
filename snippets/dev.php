@@ -18,6 +18,5 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-  <?php echo f::read('./site/plugins/dev/assets/js/dev.js') ?>
-</script>
+
+<script src="/media/plugins/julien-gargot/dev/js/dev.js" charset="utf-8"></script>
