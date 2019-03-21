@@ -11,18 +11,16 @@ function displayWidth() {
 // Events
 document.onkeypress = function (oPEvt) {
   var oEvent = oPEvt || window.event;
-  if (oEvent.ctrlKey || oEvent.metaKey) { // With command key
-    switch (String.fromCharCode(oEvent.charCode)) {
-      case ';':
-        oEvent.preventDefault();
-        document.getElementsByTagName('html').item(0).classList.toggle("dev");
-        document.getElementsByTagName('html').item(0).classList.toggle("dev--16");
-        break;
-      case ' ':
-        oEvent.preventDefault();
-        document.getElementById('dev').classList.toggle("big");
-        break;
-    }
+  switch (String.fromCharCode(oEvent.charCode)) {
+    case ';':
+      oEvent.preventDefault();
+      document.getElementsByTagName('html').item(0).classList.toggle("dev");
+      document.getElementsByTagName('html').item(0).classList.toggle("dev--16");
+      break;
+    case ' ':
+      oEvent.preventDefault();
+      document.getElementById('dev').classList.toggle("big");
+      break;
   }
 };
 
