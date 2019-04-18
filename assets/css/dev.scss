@@ -22,6 +22,11 @@
       > * {
         background-color: rgba(255, 255, 255, 0.7); overflow: hidden; height: 13px; }}}
 
+  @include media-breakpoint-down(xs) {
+    #grid .col:nth-child(6) ~ .col {
+      display: none;
+    }
+  }
   &.big {
     bottom:1px;
     #grid > div > * {
